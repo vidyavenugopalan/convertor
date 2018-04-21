@@ -1,0 +1,122 @@
+<html>
+<head>
+	<style>
+ body
+ {
+ 	 margin:250 px ;
+ padding-top:20px;
+ padding-bottom:150 px;
+ padding-right:50 px;
+ padding-left:430px;
+ }
+</style>
+	<script type="text/javascript">
+		var ConvertBase = function (num) {
+        return {
+            from : function (baseFrom) {
+                return {
+                    to : function (baseTo) {
+                        return parseInt(num, baseFrom).toString(baseTo);
+                    }
+                };
+            }
+        };
+    };
+		function bin2dec() {
+		var num = calc.value1.value;
+   var result = parseInt(num, 2);
+   alert("The  result is "+result);
+calc.value3.value=result
+}
+function bin2hex() {
+		var num = calc.value1.value;
+   var result =parseInt(num , 2).toString(16).toUpperCase();
+   alert("The  result is "+result);
+calc.value3.value=result
+}
+function bin2oct() {
+		var num = calc.value1.value;
+   var result =parseInt(num, 2).toString(8);
+   alert("The  result is "+result);
+calc.value3.value=result
+}
+function dec2bin() {
+		var num = calc.value1.value;
+   var result = ConvertBase(num).from(10).to(2);
+   alert("The  result is "+result);
+calc.value3.value=result
+}
+	function dec2hex() {
+		var num = calc.value1.value;
+   var result=ConvertBase(num).from(10).to(16);
+   alert("The  result is "+result);
+calc.value3.value=result
+}
+function dec2oct() {
+		var num = calc.value1.value;
+   var result=ConvertBase(num).from(10).to(8);
+   alert("The  result is "+result);
+calc.value3.value=result
+}
+function hex2bin() {
+		var num = calc.value1.value;
+   var result=ConvertBase(num).from(16).to(2);
+   alert("The  result is "+result);
+calc.value3.value=result
+}
+function hex2oct() {
+		var num = calc.value1.value;
+   var interresult=ConvertBase(num).from(16).to(2);
+   var result=ConvertBase(interresult).from(2).to(8);
+   alert("The  result is "+result);
+calc.value3.value=result
+}
+function hex2dec() {
+		var num = calc.value1.value;
+   var result=ConvertBase(num).from(16).to(10);
+   alert("The  result is "+result);
+calc.value3.value=result
+}
+function oct2dec() {
+		var num = calc.value1.value;
+   var result=ConvertBase(num).from(8).to(10);
+   alert("The  result is "+result);
+calc.value3.value=result
+}	
+function oct2bin() {
+		var num = calc.value1.value;
+   var result=ConvertBase(num).from(8).to(2);
+   alert("The  result is "+result);
+calc.value3.value=result
+}
+function oct2hex() {
+		var num = calc.value1.value;
+   var interresult=ConvertBase(num).from(8).to(2);
+   var result=ConvertBase(interresult).from(2).to(16);
+   alert("The  result is "+result);
+calc.value3.value=result
+}	
+
+</script>
+</head>
+<body>
+<form name="calc">
+<h1>CONVERSION</h1>
+Enter first Numeric Value :   <input type="text" id="value1"> </br>
+ </br>
+Result  is : <output type="number" id="value3"> </output></br></br>
+<input type="button" Value="BIN2DEC" onClick=bin2dec()> </br>
+<input type="button" Value="BIN2HEX" onClick=bin2hex()></br>
+<input type="button" Value="BIN2OCT" onClick=bin2oct()></br></br>
+<input type="button" Value="DEC2BIN" onClick=dec2bin()></br>
+<input type="button" Value="DEC2HEX" onClick=dec2hex()> </br>
+<input type="button" Value="DEC2OCT" onClick=dec2oct()></br></br>
+<input type="button" Value="HEX2BIN" onClick=hex2bin()></br>
+<input type="button" Value="HEX2OCT" onClick=hex2oct()></br>
+<input type="button" Value="HEX2DEC" onClick=hex2dec()></br></br>
+<input type="button" Value="OCT2DEC" onClick=oct2dec()></br>
+<input type="button" Value="OCT2BIN" onClick=oct2bin()></br>
+<input type="button" Value="OCT2HEX" onClick=oct2hex()></br></br>
+</form>
+</body>
+</html>
